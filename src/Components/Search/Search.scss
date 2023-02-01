@@ -1,12 +1,19 @@
 .Search_container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
+
+.Search_input {
     position: relative;
     width: 100%;
+    margin-right: 24px;
 }
 
 .Search {
     border: none;
     height: 60px;
-    width:97%;
+    width:95%;
     font-size: 50px;
     border-radius: 20px;
     box-shadow: 6px 6px 45px #c7c3c3;
@@ -21,5 +28,9 @@
 .Search_icon {
     position: absolute;
   top: 30px;
-  right: 30px;
+  right: 50px;
+}
+
+.Search_parameters {
+    cursor: pointer;
 }

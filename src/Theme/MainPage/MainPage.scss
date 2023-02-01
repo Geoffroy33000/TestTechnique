@@ -9,3 +9,26 @@
 .MainPage_title {
     font-size:40px;
 }
+
+.MainPage_content {
+    display: flex;
+    justify-content: space-between;
+    height: 600px;
+}
+
+.MainPage_content_categories {
+    writing-mode: vertical-lr;
+    text-orientation: sideways-right;
+    padding: 50px 0 70px 50px;
+    display: flex;
+    justify-content: space-between;
+    transform: rotate(180deg);
+}
+
+.MainPage_content_category {
+    font-size: 30px;
+}
+
+.MainPage_content_carousel {
+    width: 80%;
+}
