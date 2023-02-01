@@ -1,10 +1,9 @@
-import React from 'react';
-import { AppProvider } from './Context';
-import Example from './Theme/Example';
+import { AppProvider } from "./Context";
+import { MainPage } from "./Theme";
 
 const App = () => (
   <AppProvider>
-    <Example />
+    <MainPage />
   </AppProvider>
 );
 

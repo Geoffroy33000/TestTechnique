@@ -1,25 +1,29 @@
-import React, { useReducer, createContext, Dispatch, PropsWithChildren } from 'react';
-import { exampleReducer, appConfigReducer } from './reducers';
-import { ExampleActions, AppConfigActions, InitialStateType } from './model';
+import { useReducer, createContext, Dispatch, PropsWithChildren } from "react";
+import { exampleReducer, appConfigReducer } from "./reducers";
+import { ExampleActions, AppConfigActions, InitialStateType } from "./model";
 
 const initialState = {
+  examples: [],
   appConfig: {
-    lang: 'fr',
-    theme: 'light'
-  }
-}
+    lang: "fr",
+    theme: "light",
+  },
+};
 
 const AppContext = createContext<{
   state: InitialStateType;
   dispatch: Dispatch<ExampleActions>;
 }>({
   state: initialState,
-  dispatch: () => null
+  dispatch: () => null,
 });
 
-const globalReducer = ({ examples, appConfig }: InitialStateType, action: ExampleActions | AppConfigActions) => ({
-  examples: exampleReducer(examples, action),
-  appConfig: appConfigReducer(appConfig, action)
+const globalReducer = (
+  { examples, appConfig }: InitialStateType,
+  action: ExampleActions | AppConfigActions
+) => ({
+  examples: exampleReducer(examples, action as ExampleActions),
+  appConfig: appConfigReducer(appConfig, action as AppConfigActions),
 });
 
 const AppProvider = ({ children }: PropsWithChildren<{}>) => {
