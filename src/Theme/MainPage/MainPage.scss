@@ -1,0 +1,11 @@
+//@use 'globalStyles';
+
+.MainPage_header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
+
+.MainPage_title {
+    font-size:40px;
+}

@@ -1,0 +1,25 @@
+.Search_container {
+    position: relative;
+    width: 100%;
+}
+
+.Search {
+    border: none;
+    height: 60px;
+    width:97%;
+    font-size: 50px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 45px #c7c3c3;
+    padding: 20px;
+}
+
+.Search::placeholder {
+    font-size: 50px;
+    opacity: 0.2;
+}
+
+.Search_icon {
+    position: absolute;
+  top: 30px;
+  right: 30px;
+}
