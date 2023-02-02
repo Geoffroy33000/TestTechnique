@@ -1,4 +1,4 @@
-import { Search, Carousel } from "../../Components";
+import { Search, Carousel, Footer } from "../../Components";
 
 import "./MainPage.scss";
 
@@ -23,6 +23,9 @@ function MainPage() {
         <div className="MainPage_content_carousel">
           <Carousel />
         </div>
+      </div>
+      <div className="MainPage_footer">
+        <Footer />
       </div>
     </>
   );

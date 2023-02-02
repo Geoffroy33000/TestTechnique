@@ -1,0 +1,35 @@
+.Footer_header{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
+
+.Footer_header_title {
+    font-size: 30px;
+}
+
+.Footer_header_action {
+    font-size: 30px;
+    color: #C0C0C0
+}
+
+.Footer_header_action .Icon{
+    margin-left: 12px;
+}
+
+.Footer_content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.Footer_content_item {
+    box-shadow: 6px 6px 45px #c7c3c3;
+    height: 250px;
+    width: 180px;
+    border-radius: 20px;
+}
+
+.Footer_content_item img {
+    height: 180px;
+    margin: 35px auto;
+}
