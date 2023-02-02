@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AppProvider } from "./Context";
 
-import { MainPage } from "./Theme";
+import { MainPage, DetailPage } from "./Theme";
 
 import "./App.scss";
 
@@ -11,6 +11,7 @@ const App = () => (
       <Router>
         <Routes>
           <Route path="/" element={<MainPage />} />
+          <Route path="/details/:id" element={<DetailPage />} />
         </Routes>
       </Router>
     </AppProvider>

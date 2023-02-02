@@ -4,7 +4,7 @@ import "./MainPage.scss";
 
 function MainPage() {
   return (
-    <>
+    <div className="MainPage_container">
       <div className="MainPage_header">
         <div className="MainPage_title">
           Mahrs Bräu <b>Beers</b>
@@ -27,7 +27,7 @@ function MainPage() {
       <div className="MainPage_footer">
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

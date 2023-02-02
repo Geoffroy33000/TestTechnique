@@ -1,5 +1,11 @@
 //@use 'globalStyles';
 
+.MainPage_container {
+    width: 95%;
+  margin: 0;
+  padding:64px 48px 128px 48px;
+}
+
 .MainPage_header {
     display: flex;
     justify-content: space-between;
