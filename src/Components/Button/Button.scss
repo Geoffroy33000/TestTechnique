@@ -1,0 +1,24 @@
+.Button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 0;
+  border: none;
+  color: blue;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.Button:hover {
+  text-decoration: underline;
+}
+
+.Button__icon {
+  display: inline-flex;
+}
+
+.Button.Button--has-icon.Button--icon-only {
+  padding: 0 4px;
+  min-width: 30px;
+  justify-content: center;
+}

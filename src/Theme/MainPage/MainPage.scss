@@ -18,7 +18,6 @@
 
 .MainPage_content {
     display: flex;
-    justify-content: space-between;
     height: 600px;
     margin-bottom: 64px;
 }
@@ -37,5 +36,42 @@
 }
 
 .MainPage_content_carousel {
-    width: 80%;
+    width: 95%;
+}
+
+.Search_container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 64px;
+}
+
+.Search_input {
+    position: relative;
+    width: 100%;
+    margin-right: 24px;
+}
+
+.Search {
+    border: none;
+    height: 60px;
+    width:95%;
+    font-size: 50px;
+    border-radius: 20px;
+    box-shadow: 6px 6px 45px #c7c3c3;
+    padding: 20px;
+}
+
+.Search::placeholder {
+    font-size: 50px;
+    opacity: 0.2;
+}
+
+.Search_icon {
+    position: absolute;
+  top: 30px;
+  right: 50px;
+}
+
+.Search_parameters {
+    cursor: pointer;
 }

@@ -7,6 +7,10 @@
     box-shadow: 6px 6px 45px #c7c3c3;
 }
 
+.CarouselItem_container:not(:last-child) {
+    margin-right: 48px;
+}
+
 .CarouselItem_content {
     padding: 64px 64px 0 64px;
 }
@@ -23,8 +27,9 @@
 }
 
 .CarouselItem_image {
-    height: 400px;
+    height: 300px;
     width: 100%;
+    
 }
 
 .CarouselItem_image img {

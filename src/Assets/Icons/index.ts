@@ -5,3 +5,4 @@ export { default as PartialArrowLeft } from './PartialArrowLeft';
 export { default as Artichoke } from './Artichoke';
 export { default as Drop } from './Drop';
 export { default as Percent} from './Percent';
+export { default as Cross } from './Cross';

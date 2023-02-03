@@ -1,0 +1,85 @@
+.Modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.Modal__mask {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  transition: background-color 0.3s ease 0.1s;
+}
+
+.Modal__container {
+  min-width: 400px;
+  max-width: calc(100% - 64px);
+  max-height: calc(100% - 64px);
+  margin: 32px;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transform: scale(0);
+
+  transition: transform 0.3s ease;
+}
+
+.Modal__header {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.Modal__title {
+  flex-grow: 1;
+  margin-right: 50px;
+  color: var(--elwin-black);
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.Modal__close {
+  margin: 3px 0 3px auto;
+}
+
+/* OPEN STATE */
+.Modal.Modal--is-open {
+  pointer-events: all;
+}
+
+.Modal.Modal--is-open .Modal__container {
+  transform: scale(1);
+}
+
+.Modal.Modal--is-open .Modal__mask {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* TOP POSITION */
+.Modal.Modal--top {
+  align-items: flex-start;
+}
+
+/* BOTTOM POSITION */
+.Modal.Modal--bottom {
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+  .Modal__container {
+    width: 100%;
+    margin: 32px 16px;
+  }
+}
