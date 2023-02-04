@@ -2,18 +2,32 @@ import { useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
 
 import { Button, Carousel, Footer, Modal } from "../../Components";
 
+import {
+  Data,
+  CategoryData,
+  GlassesData,
+  AlcoholicData,
+} from "../../Assets/Types/DataType";
+
 import { Search as SearchIcon } from "../../Assets/Icons";
 
 import "./MainPage.scss";
 
-export type Data = {
-  drinks: [{ strDrink: string; strDrinkThumb: string; idDrink: string }];
-};
-
 function MainPage() {
   const [isOpen, setIsOpen] = useState(false);
   const [data, setData] = useState<Data | null>();
-  const [product, setProduct] = useState<string>();
+  const [product, setProduct] = useState<string>("Rum");
+  const [option, setOption] = useState<string | null>("");
+  const [categoryOptionSelected, setCategoryOptionSelected] =
+    useState<CategoryData | null>();
+  const [glassesOptionSelected, setGlassesOptionSelected] =
+    useState<GlassesData | null>();
+
+  const [AlcoholicOptionSelected, setAlcoholicOptionSelected] =
+    useState<AlcoholicData | null>();
+  const [typeOptionSelected, setTypeOptionSelected] = useState<boolean | null>(
+    false
+  );
   const [word, setWord] = useState<string>("");
   const [definitivWord, setDefinitivWord] = useState<string>("");
 
@@ -27,21 +41,138 @@ function MainPage() {
     "Tequila",
   ];
 
+  const options = [
+    "Categories",
+    "Type of glasses",
+    "Type of alcohol",
+    "Alcoholic or not",
+  ];
+
   function handleClose() {
+    setOption("");
+    setCategoryOptionSelected(null);
+    setAlcoholicOptionSelected(null);
+    setGlassesOptionSelected(null);
+    setTypeOptionSelected(false);
     setIsOpen(false);
   }
 
-  function handleClick(product: string) {
-    setProduct(product);
+  function handleClick(option: string) {
+    setOption(option);
+  }
+
+  async function handleClickCategory(category: string) {
+    const response = await fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`
+    );
+    const actualData = await response.json();
+    setData(actualData);
+    setCategoryOptionSelected(null);
+    setIsOpen(false);
+  }
+
+  async function handleClickGlasses(glasses: string) {
+    const response = await fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?g=${glasses}`
+    );
+    const actualData = await response.json();
+    setData(actualData);
+    setGlassesOptionSelected(null);
+    setIsOpen(false);
+  }
+
+  async function handleClickType(type: string) {
+    const response = await fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${type}`
+    );
+    const actualData = await response.json();
+    setData(actualData);
+    setTypeOptionSelected(false);
+    setIsOpen(false);
+  }
+
+  async function handleClickAlcoholic(alcoholic: string) {
+    const response = await fetch(
+      `https://www.thecocktaildb.com/api/json/v1/1/filter.php?a=${alcoholic}`
+    );
+    const actualData = await response.json();
+    setData(actualData);
+    setAlcoholicOptionSelected(null);
     setIsOpen(false);
   }
 
   function handleChangeSearch(event: ChangeEvent<HTMLInputElement>) {
+    event.preventDefault();
     setWord(event.target.value);
   }
 
   function handleSearch() {
     setDefinitivWord(word);
+  }
+
+  async function renderOptions() {
+    switch (option) {
+      case "Categories":
+        const responseCategories = await fetch(
+          "https://www.thecocktaildb.com/api/json/v1/1/list.php?c=list"
+        );
+        const actualDataCategories: CategoryData =
+          await responseCategories.json();
+        setCategoryOptionSelected(actualDataCategories);
+        break;
+
+      case "Type of glasses":
+        const responseGlasses = await fetch(
+          "https://www.thecocktaildb.com/api/json/v1/1/list.php?g=list"
+        );
+        const actualDataGlasses = await responseGlasses.json();
+        setGlassesOptionSelected(actualDataGlasses);
+        break;
+
+      case "Type of alcohol":
+        setTypeOptionSelected(true);
+        break;
+
+      case "Alcoholic or not":
+        const responseAlcoholic = await fetch(
+          "https://www.thecocktaildb.com/api/json/v1/1/list.php?a=list"
+        );
+        const actualDataAlcoholic = await responseAlcoholic.json();
+        setAlcoholicOptionSelected(actualDataAlcoholic);
+        break;
+    }
+  }
+
+  function renderOptionsResults() {
+    if (categoryOptionSelected) {
+      return categoryOptionSelected.drinks.map((drink) => (
+        <Button onClick={() => handleClickCategory(drink.strCategory)}>
+          {drink.strCategory}
+        </Button>
+      ));
+    }
+
+    if (glassesOptionSelected) {
+      return glassesOptionSelected.drinks.map((drink) => (
+        <Button onClick={() => handleClickGlasses(drink.strGlass)}>
+          {drink.strGlass}
+        </Button>
+      ));
+    }
+
+    if (typeOptionSelected) {
+      return products.map((drink) => (
+        <Button onClick={() => handleClickType(drink)}>{drink}</Button>
+      ));
+    }
+
+    if (AlcoholicOptionSelected) {
+      return AlcoholicOptionSelected.drinks.map((drink) => (
+        <Button onClick={() => handleClickAlcoholic(drink.strAlcoholic)}>
+          {drink.strAlcoholic}
+        </Button>
+      ));
+    }
   }
 
   async function api() {
@@ -64,14 +195,14 @@ function MainPage() {
 
   useEffect(() => {
     api();
-  }, [product]);
+  }, []);
 
   useEffect(() => {
-    api();
-  }, [definitivWord]);
+    renderOptions();
+  }, [option]);
 
-  console.log(word);
-  console.log(definitivWord);
+  console.log(data?.drinks.length);
+
   return (
     <>
       <div className="MainPage_container">
@@ -86,6 +217,7 @@ function MainPage() {
         <div className="Search_container">
           <div className="Search_input">
             <input
+              type="text"
               className="Search"
               placeholder="Search"
               onChange={handleChangeSearch}
@@ -113,9 +245,14 @@ function MainPage() {
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={handleClose}>
-        {products.map((product) => (
-          <Button onClick={() => handleClick(product)}>{product}</Button>
-        ))}
+        <div>
+          <div>
+            {options.map((option) => (
+              <Button onClick={() => handleClick(option)}>{option}</Button>
+            ))}
+          </div>
+          <div>{renderOptionsResults()}</div>
+        </div>
       </Modal>
     </>
   );

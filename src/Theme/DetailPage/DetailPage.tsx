@@ -28,7 +28,7 @@ function DetailPage() {
   useEffect(() => {
     api();
   }, []);
-  console.log(data);
+
   return (
     <>
       {data && (
