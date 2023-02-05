@@ -75,3 +75,22 @@
 .Search_parameters {
     cursor: pointer;
 }
+
+.MainPage_Modal_options {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.MainPage_Modal_results {
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.MainPage_Modal_results .Button {
+    margin-top: 24px;
+}
+
+.MainPage_Modal_results .Button:not(:last-child) {
+    margin-right: 24px;
+}

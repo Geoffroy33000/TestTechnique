@@ -1,24 +1,33 @@
 .Button {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  padding: 0;
-  border: none;
-  color: blue;
-  cursor: pointer;
-  transition: opacity 0.3s ease;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    padding: 16px 0 16px 16px;
+    border: none;
+    cursor: pointer;
+    //height: 30px;
+    background-color: #76D1FF;
+    border-radius: 10px;
+    
+    transition: opacity 0.3s ease;
 }
 
-.Button:hover {
-  text-decoration: underline;
+.Button__label {
+    display: inline-flex;
+    margin-right: 16px;
 }
 
 .Button__icon {
-  display: inline-flex;
+    margin-right: 16px;
+    display: inline-flex;
 }
 
-.Button.Button--has-icon.Button--icon-only {
-  padding: 0 4px;
-  min-width: 30px;
-  justify-content: center;
+.Button__icon, .Button__icon img {
+    height: 20px;
 }
+
+/* ICON STATE */
+.Button.Button--has-icon.Button--icon-only {
+    min-width: 30px;
+    justify-content: center;
+  }

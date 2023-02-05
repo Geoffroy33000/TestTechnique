@@ -245,13 +245,13 @@ function MainPage() {
         </div>
       </div>
       <Modal isOpen={isOpen} onClose={handleClose}>
-        <div>
-          <div>
+        <div className="MainPage_Modal_content">
+          <div className="MainPage_Modal_options">
             {options.map((option) => (
               <Button onClick={() => handleClick(option)}>{option}</Button>
             ))}
           </div>
-          <div>{renderOptionsResults()}</div>
+          <div className="MainPage_Modal_results">{renderOptionsResults()}</div>
         </div>
       </Modal>
     </>
