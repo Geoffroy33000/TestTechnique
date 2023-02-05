@@ -1,3 +1,6 @@
+@import'../../Assets/Styles/mixins';
+@import '../../Assets/Styles/variables.scss';
+
 .DetailPage_header {
     background: rgb(112,207,255);
     background: linear-gradient(180deg, rgba(112,207,255,1) 0%, rgba(155,223,255,1) 50%, rgba(196,234,253,1) 100%); 
@@ -8,8 +11,7 @@
 }
 
 .DetailPage_header_actions {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
     position: relative;
 }
 
@@ -29,8 +31,7 @@
 }
 
 .DetailPage_content_title {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
 }
 
 .DetailPage_content_name {
@@ -42,8 +43,7 @@
 }
 
 .DetailPage_content_categories {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
     margin-top: 64px;
 }
 
@@ -72,10 +72,9 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   line-height: 40px;
-  font-size: 20px;
+  font-size: $px20;
 }
 
 .DetailPage_Actions {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
 }

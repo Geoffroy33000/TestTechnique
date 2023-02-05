@@ -1,11 +1,14 @@
+@import '../../Assets/Styles/variables.scss';
+@import '../../Assets/Styles/mixins.scss';
+
 .Modal {
   position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  top: $zero;
+  bottom: $zero;
+  left: $zero;
+  right: $zero;
   display: flex;
-  align-items: center;
+  @include alignItemsCenter;  
   justify-content: center;
   pointer-events: none;
   z-index: 1000;
@@ -51,7 +54,7 @@
 }
 
 .Modal__close {
-  margin: 3px 0 3px auto;
+  margin: 3px $zero 3px auto;
 }
 
 /* OPEN STATE */

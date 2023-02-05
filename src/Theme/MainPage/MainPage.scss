@@ -1,4 +1,5 @@
-//@use 'globalStyles';
+@import '../../Assets/Styles/mixins';
+@import '../../Assets/Styles/variables.scss';
 
 .MainPage_container {
     width: 95%;
@@ -7,8 +8,7 @@
 }
 
 .MainPage_header {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
     margin-bottom: 64px;
 }
 
@@ -18,16 +18,17 @@
 
 .MainPage_content {
     display: flex;
-    height: 600px;
+    height: 800px;
     margin-bottom: 64px;
+    @include alignItemsCenter;
 }
 
 .MainPage_content_categories {
+    height: 500px;
     writing-mode: vertical-lr;
     text-orientation: sideways-right;
     padding: 50px 0 70px 50px;
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
     transform: rotate(180deg);
 }
 
@@ -40,8 +41,7 @@
 }
 
 .Search_container {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
     margin-bottom: 64px;
 }
 
@@ -56,9 +56,9 @@
     height: 60px;
     width:95%;
     font-size: 50px;
-    border-radius: 20px;
+    border-radius: $px20;
     box-shadow: 6px 6px 45px #c7c3c3;
-    padding: 20px;
+    padding: $px20;
 }
 
 .Search::placeholder {
@@ -78,8 +78,7 @@
 
 .MainPage_Modal_options {
     margin-top: 24px;
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
 }
 
 .MainPage_Modal_results {

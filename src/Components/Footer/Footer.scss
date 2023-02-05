@@ -1,6 +1,8 @@
+@import'../../Assets/Styles/mixins';
+@import '../../Assets/Styles/variables.scss';
+
 .Footer_header{
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
     margin-bottom: 64px;
 }
 
@@ -18,15 +20,14 @@
 }
 
 .Footer_content {
-    display: flex;
-    justify-content: space-between;
+    @include displayFlexSpaceBetween;
 }
 
 .Footer_content_item {
     box-shadow: 6px 6px 45px #c7c3c3;
     height: 250px;
     width: 180px;
-    border-radius: 20px;
+    border-radius: $px20;
 }
 
 .Footer_content_item img {

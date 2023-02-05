@@ -1,0 +1,16 @@
+@mixin displayFlexSpaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin alignItemsCenter {
+    align-items: center;
+}
+
+@mixin cursorPointer {
+    cursor: pointer;
+}
+
+@mixin displayInlineFlex {
+    display: inline-flex;
+}
