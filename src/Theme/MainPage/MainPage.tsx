@@ -1,6 +1,7 @@
-import { useState, useEffect, ChangeEvent, KeyboardEvent } from "react";
+import { useState, useEffect, ChangeEvent, useContext } from "react";
+import { AppContext } from "../../Context/context";
 
-import { Button, Carousel, Footer, Modal } from "../../Components";
+import { Button, Carousel, Footer, Modal, SwitchTheme } from "../../Components";
 
 import {
   Data,
@@ -30,6 +31,12 @@ function MainPage() {
   );
   const [word, setWord] = useState<string>("");
   const [definitivWord, setDefinitivWord] = useState<string>("");
+
+  const { state } = useContext(AppContext);
+
+  const style = {
+    backgroundColor: state.appConfig.theme === "light" ? "#FFFFFF" : "#495057",
+  };
 
   const products = [
     "Gin",
@@ -201,11 +208,9 @@ function MainPage() {
     renderOptions();
   }, [option]);
 
-  console.log(data?.drinks.length);
-
   return (
     <>
-      <div className="MainPage_container">
+      <div className="MainPage_container" style={style}>
         <div className="MainPage_header">
           <div className="MainPage_title">
             Mahrs Bräu <b>Beers</b>
@@ -244,6 +249,7 @@ function MainPage() {
           <Footer />
         </div>
       </div>
+      <SwitchTheme />
       <Modal isOpen={isOpen} onClose={handleClose}>
         <div className="MainPage_Modal_content">
           <div className="MainPage_Modal_options">

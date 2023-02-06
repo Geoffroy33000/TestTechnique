@@ -12,10 +12,10 @@ const initialState = {
 
 const AppContext = createContext<{
   state: InitialStateType;
-  dispatch: Dispatch<ExampleActions>;
+  dispatch: Dispatch<AppConfigActions>;
 }>({
   state: initialState,
-  dispatch: () => null,
+  dispatch: () => {},
 });
 
 const globalReducer = (

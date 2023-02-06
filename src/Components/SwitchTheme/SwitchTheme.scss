@@ -1,0 +1,13 @@
+@import '../../Assets/Styles/variables.scss';
+@import '../../Assets/Styles/mixins.scss';
+
+.SwitchTheme_container {
+    //@include positionAbsolute;
+    position: fixed;
+    bottom: $zero;
+    right: $zero;
+}
+
+.SwitchTheme_container .Button:first-child{
+    margin-right: $px24;
+}

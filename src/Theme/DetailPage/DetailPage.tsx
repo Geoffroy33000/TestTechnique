@@ -1,5 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+
+import { AppContext } from "../../Context/context";
 
 import { CocktailDetails } from "../../Assets/Types/CocktailDetails";
 
@@ -29,10 +31,16 @@ function DetailPage() {
     api();
   }, []);
 
+  const { state } = useContext(AppContext);
+
+  const style = {
+    backgroundColor: state.appConfig.theme === "light" ? "#FFFFFF" : "#495057",
+  };
+
   return (
     <>
       {data && (
-        <div className="DetailPage_container">
+        <div className="DetailPage_container" style={style}>
           <div className="DetailPage_header">
             <div className="DetailPage_header_actions">
               <Link to={"/"}>
