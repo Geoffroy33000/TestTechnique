@@ -2,74 +2,74 @@
 @import '../../Assets/Styles/variables.scss';
 
 .MainPage_container {
-    width: 95%;
-  margin: 0;
-  padding:64px 48px 128px 48px;
+    width: $percent95;
+  margin: $zero;
+  padding:$px64 $px48 $px128 $px48;
 }
 
 .MainPage_header {
     @include displayFlexSpaceBetween;
-    margin-bottom: 64px;
+    margin-bottom: $px64;
 }
 
 .MainPage_title {
-    font-size:40px;
+    font-size:$px40;
 }
 
 .MainPage_content {
-    display: flex;
-    height: 800px;
-    margin-bottom: 64px;
+    @include displayFlex;
+    height: $px800;
+    margin-bottom: $px64;
     @include alignItemsCenter;
 }
 
 .MainPage_content_categories {
-    height: 500px;
+    height: $px500;
     writing-mode: vertical-lr;
     text-orientation: sideways-right;
-    padding: 50px 0 70px 50px;
+    padding: $px50 $zero 70px $px50;
     @include displayFlexSpaceBetween;
     transform: rotate(180deg);
 }
 
 .MainPage_content_category {
-    font-size: 30px;
+    font-size: $px30;
 }
 
 .MainPage_content_carousel {
-    width: 95%;
+    width: $percent95;
 }
 
 .Search_container {
     @include displayFlexSpaceBetween;
-    margin-bottom: 64px;
+    margin-bottom: $px64;
 }
 
 .Search_input {
-    position: relative;
-    width: 100%;
-    margin-right: 24px;
+    @include positionRelative;
+    @include width100;
+    margin-right: $px24;
 }
 
 .Search {
     border: none;
     height: 60px;
-    width:95%;
-    font-size: 50px;
+    width:$percent95;
+    font-size: $px50;
     border-radius: $px20;
-    box-shadow: 6px 6px 45px #c7c3c3;
+    @include shadowBox;
     padding: $px20;
 }
 
 .Search::placeholder {
-    font-size: 50px;
+    font-size: $px50;
     opacity: 0.2;
 }
 
 .Search_icon {
-    position: absolute;
-  top: 30px;
-  right: 50px;
+    @include positionAbsolute;
+  top: $px30;
+  right: $px50;
 }
 
 .Search_parameters {
@@ -77,19 +77,19 @@
 }
 
 .MainPage_Modal_options {
-    margin-top: 24px;
+    margin-top: $px24;
     @include displayFlexSpaceBetween;
 }
 
 .MainPage_Modal_results {
-    margin-top: 40px;
+    margin-top: $px40;
     flex-wrap: wrap;
 }
 
 .MainPage_Modal_results .Button {
-    margin-top: 24px;
+    margin-top: $px24;
 }
 
 .MainPage_Modal_results .Button:not(:last-child) {
-    margin-right: 24px;
+    margin-right: $px24;
 }

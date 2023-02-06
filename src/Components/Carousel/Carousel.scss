@@ -2,21 +2,21 @@
 @import '../../Assets/Styles/mixins.scss';
 
 .Carousel_container {
-    display: flex;
-    height: 800px;
-    width: 100%;
+    @include displayFlex;
+    height: $px800;
+    @include width100;
     overflow-x: hidden;
     @include alignItemsCenter
 }
 
 .Carousel_control_left {
-    position: absolute;
+    @include positionAbsolute;
     left: 115px;
     @include cursorPointer;
 }
 
 .Carousel_control_right {
-    position: absolute;
-    right: 27px;
+    @include positionAbsolute;
+    right: $px12;
     @include cursorPointer;
 }

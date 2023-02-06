@@ -1,5 +1,6 @@
 @import '../../Assets/Styles/variables.scss';
 @import '../../Assets/Styles/mixins.scss';
+@import '../../Assets/Styles/colors.scss';
 
 .Modal {
   position: fixed;
@@ -7,31 +8,31 @@
   bottom: $zero;
   left: $zero;
   right: $zero;
-  display: flex;
+  @include displayFlex;
   @include alignItemsCenter;  
-  justify-content: center;
+  justify-content: $center;
   pointer-events: none;
   z-index: 1000;
 }
 
 .Modal__mask {
-  position: absolute;
-  width: 100%;
-  height: 100%;
+  @include positionAbsolute;
+  @include width100;
+  height: $percent100;
   z-index: -1;
 
   transition: background-color 0.3s ease 0.1s;
 }
 
 .Modal__container {
-  min-width: 600px;
-  max-width: calc(100% - 64px);
-  max-height: calc(100% - 64px);
-  margin: 32px;
-  padding: 32px;
+  min-width: $px600;
+  max-width: calc($percent100 - $px64);
+  max-height: calc($percent100 - $px64);
+  margin: $px32;
+  padding: $px32;
   background-color: #ffffff;
   border-radius: 8px;
-  overflow-y: auto;
+  overflow-y: $auto;
   overflow-x: hidden;
   transform: scale(0);
 
@@ -39,22 +40,22 @@
 }
 
 .Modal__header {
-  display: flex;
+  @include displayFlex;
   align-items: flex-start;
-  width: 100%;
-  margin-bottom: 24px;
+  @include width100;
+  margin-bottom: $px24;
 }
 
 .Modal__title {
   flex-grow: 1;
-  margin-right: 50px;
-  color: var(--elwin-black);
+  margin-right: $px50;
+  color: $blueLight;
   font-size: 21px;
   font-weight: 700;
 }
 
 .Modal__close {
-  margin: 3px $zero 3px auto;
+  margin: $px3 $zero $px3 auto;
 }
 
 /* OPEN STATE */
@@ -82,7 +83,7 @@
 
 @media screen and (max-width: 900px) {
   .Modal__container {
-    width: 100%;
-    margin: 32px 16px;
+    @include width100;
+    margin: $px32 $px16;
   }
 }

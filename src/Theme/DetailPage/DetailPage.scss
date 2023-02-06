@@ -1,33 +1,34 @@
 @import'../../Assets/Styles/mixins';
 @import '../../Assets/Styles/variables.scss';
+@import '../../Assets/Styles/colors.scss';
 
 .DetailPage_header {
-    background: rgb(112,207,255);
-    background: linear-gradient(180deg, rgba(112,207,255,1) 0%, rgba(155,223,255,1) 50%, rgba(196,234,253,1) 100%); 
-    height: 500px;
-    border-radius: 0 0 350px 0;
-    padding:64px 48px 128px 48px;
-    position: relative;
+    background: $blueLight;
+    @include blueLightGradient;
+    height: $px500;
+    border-radius: $zero $zero 350px $zero;
+    padding:$px64 $px48 $px128 $px48;
+    @include positionRelative;
 }
 
 .DetailPage_header_actions {
     @include displayFlexSpaceBetween;
-    position: relative;
+    @include positionRelative;
 }
 
 .DetailPage_header_image {
-    width: 100%;
+    @include width100;
 }
 
 .DetailPage_header_image img {
     height: 550px;
-    margin: 150px auto 0 auto;
-    display: block;
+    margin: $px150 $auto $zero $auto;
+    @include displayBlock;
 }
 
 .DetailPage_content {
-    padding:64px 48px 128px 48px;
-    margin-top: 150px;
+    padding:$px64 $px48 $px128 $px48;
+    margin-top: $px150;
 }
 
 .DetailPage_content_title {
@@ -35,7 +36,7 @@
 }
 
 .DetailPage_content_name {
-    font-size: 40px;
+    font-size: $px40;
 }
 
 .DetailPage_content_price {
@@ -44,34 +45,34 @@
 
 .DetailPage_content_categories {
     @include displayFlexSpaceBetween;
-    margin-top: 64px;
+    margin-top: $px64;
 }
 
 .DetailPage_content_category_title {
-    font-size: 30px;
-    color:#C0C0C0;
+    font-size: $px30;
+    color:$greyLight;
 }
 
 .DetailPage_content_category_information {
-    font-weight: bold;
-    font-size: 30px;
-    margin-top: 24px;
+    @include fontBold;
+    font-size: $px30;
+    margin-top: $px24;
 }
 
 .DetailPage_informations {
-    margin-top: 64px;
+    margin-top: $px64;
 }
 
 .DetailPage_informations_title {
-    font-weight: bold;
-    font-size: 30px;
+    @include fontBold;
+    font-size: $px30;
 }
 
 .DetailPage_informations_content {
     background: -webkit-linear-gradient( #333,#eee);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  line-height: 40px;
+  line-height: $px40;
   font-size: $px20;
 }
 

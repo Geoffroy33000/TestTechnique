@@ -1,6 +1,14 @@
+@mixin displayFlex {
+    display: flex;
+}
+
 @mixin displayFlexSpaceBetween {
     display: flex;
     justify-content: space-between;
+}
+
+@mixin displayBlock {
+    display: block;
 }
 
 @mixin alignItemsCenter {
@@ -13,4 +21,28 @@
 
 @mixin displayInlineFlex {
     display: inline-flex;
+}
+
+@mixin positionAbsolute {
+    position: absolute;
+}
+
+@mixin positionRelative {
+    position: relative;
+}
+
+@mixin width100 {
+    width: 100%;
+}
+
+@mixin blueLightGradient {
+    background: linear-gradient(180deg, rgba(112,207,255,1) 0%, rgba(155,223,255,1) 50%, rgba(196,234,253,1) 100%);
+}
+
+@mixin fontBold {
+    font-weight: bold;
+}
+
+@mixin shadowBox {
+    box-shadow: 6px 6px 45px #c7c3c3;
 }

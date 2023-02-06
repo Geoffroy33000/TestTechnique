@@ -1,49 +1,50 @@
 @import '../../Assets/Styles/mixins';
 @import '../../Assets/Styles/variables.scss';
+@import '../../Assets/Styles/colors.scss';
 
 .CarouselItem_container {
-    border-radius: 40px;
-    box-shadow: 6px 6px 45px #c7c3c3;
+    border-radius: $px40;
+    @include shadowBox;
 }
 
 .CarouselItem--principal {
-    background: rgb(112,207,255);
-    background: linear-gradient(180deg, rgba(112,207,255,1) 0%, rgba(155,223,255,1) 50%, rgba(196,234,253,1) 100%); 
-    height: 600px;
+    background: $blueLight;
+    @include blueLightGradient;
+    height: $px600;
     width: 400px;
-    margin-right: 48px;
+    margin-right: $px48;
 }
 
 .CarouselItem--second {
     background: rgb(255,136,112);
-    background: linear-gradient(180deg, rgba(255,136,112,1) 0%, rgba(255,169,153,1) 50%, rgba(255,206,198,1) 100%);
-    height: 500px;
-    width: 300px;
-    margin-right: 48px;
+    background: linear-gradient(180deg, rgba(255,136,112,1) 0%, rgba(255,169,153,1) 50%, rgba(255,206,198,1) $percent100);
+    height: $px500;
+    width: $px300;
+    margin-right: $px48;
 }
 
 .CarouselItem--principal .CarouselItem_content {
-    padding: 64px 64px $zero 64px;
+    padding: $px64 $px64 $zero $px64;
 }
 
 .CarouselItem--second .CarouselItem_content {
-    padding: 48px 48px $zero 48px;
+    padding: $px48 $px48 $zero $px48;
 }
 
 .CarouselItem--principal .CarouselItem_header {
     @include displayFlexSpaceBetween;
     @include alignItemsCenter;
-    margin-bottom: 64px;
+    margin-bottom: $px64;
 }
 
 .CarouselItem--second .CarouselItem_header {
     @include displayFlexSpaceBetween;
     @include alignItemsCenter;
-    margin-bottom: 32px;
+    margin-bottom: $px32;
 }
 
 .CarouselItem--principal .CarouselItem_title, .CarouselItem--principal .CarouselItem_price {
-    font-size: 30px;
+    font-size: $px30;
 }
 
 .CarouselItem--second .CarouselItem_title, .CarouselItem--second .CarouselItem_price {
@@ -51,19 +52,19 @@
 }
 
 .CarouselItem_image {
-    width: 100%;
+    @include width100;
 }
 
 .CarouselItem--principal .CarouselItem_image img {
-    height: 300px;
+    height: $px300;
     width: 272px;
-    margin: 75px auto $zero auto;
-    display: block;
+    margin: $px75 $auto $zero $auto;
+    @include displayBlock;
 }
 
 .CarouselItem--second .CarouselItem_image img {
     height: 200px;
     width: 190px;
-    margin: 75px auto $zero auto;
-    display: block;
+    margin: $px75 $auto $zero $auto;
+    @include displayBlock;
 }

@@ -1,22 +1,23 @@
 @import'../../Assets/Styles/mixins';
 @import '../../Assets/Styles/variables.scss';
+@import '../../Assets/Styles/colors.scss';
 
 .Footer_header{
     @include displayFlexSpaceBetween;
-    margin-bottom: 64px;
+    margin-bottom: $px64;
 }
 
 .Footer_header_title {
-    font-size: 30px;
+    font-size: $px30;
 }
 
 .Footer_header_action {
-    font-size: 30px;
-    color: #C0C0C0
+    font-size: $px30;
+    color: $greyLight;
 }
 
 .Footer_header_action .Icon{
-    margin-left: 12px;
+    margin-left: $px12;
 }
 
 .Footer_content {
@@ -24,13 +25,13 @@
 }
 
 .Footer_content_item {
-    box-shadow: 6px 6px 45px #c7c3c3;
+    @include shadowBox;
     height: 250px;
-    width: 180px;
+    width: $px180;
     border-radius: $px20;
 }
 
 .Footer_content_item img {
-    height: 180px;
-    margin: 35px auto;
+    height: $px180;
+    margin: 35px $auto;
 }

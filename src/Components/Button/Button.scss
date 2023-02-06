@@ -1,14 +1,15 @@
 @import '../../Assets/Styles/variables.scss';
 @import '../../Assets/Styles/mixins.scss';
+@import '../../Assets/Styles/colors.scss';
 
 .Button {
-    position: relative;
+    @include positionRelative;
     @include displayInlineFlex;
     @include alignItemsCenter;    
     padding: $px16 $zero $px16 $px16;
     border: none;
     @include cursorPointer;
-    background-color: #76D1FF;
+    background-color: $blueLight;
     border-radius: 10px;
     transition: opacity 0.3s ease;
 }
@@ -29,6 +30,6 @@
 
 /* ICON STATE */
 .Button.Button--has-icon.Button--icon-only {
-    min-width: 30px;
+    min-width: $px30;
     justify-content: $center;
   }
