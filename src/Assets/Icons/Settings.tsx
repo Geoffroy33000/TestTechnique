@@ -16,13 +16,13 @@ function Settings(props: Props) {
         width={props.width}
         height={props.height}
         viewBox="0 0 1800 1800"
-        enable-background="new 0 0 1800 1800"
+        enableBackground="new 0 0 1800 1800"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           <g>

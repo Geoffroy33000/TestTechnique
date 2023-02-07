@@ -4,8 +4,6 @@ import { CarouselItem } from "../../Components";
 
 import { PartialArrowLeft, PartialArrowRight } from "../../Assets/Icons";
 
-import { ChampagneMock } from "../../Assets/Mocks/ChampagneMock";
-
 import "./Carousel.scss";
 
 interface Props {
@@ -13,10 +11,7 @@ interface Props {
 }
 
 function Carousel(props: Props) {
-  //const Mock = ChampagneMock;
   const [principalIndex, setPrincipalIndex] = useState<number>(0);
-
-  console.log(props.drinks.length - 1, principalIndex);
 
   return (
     <div className="Carousel_container">
