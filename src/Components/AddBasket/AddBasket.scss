@@ -1,0 +1,18 @@
+@import '../../Assets/Styles/mixins.scss';
+@import '../../Assets/Styles/variables.scss';
+
+.AddBasket_container {
+    width: 250px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 50px;
+    @include displayFlexSpaceBetween;
+    @include alignItemsCenter;
+    padding: $zero $px30 $zero $px30;
+    margin-top: $px64;
+}
+
+.AddBasket_content_reduce, .AddBasket_content_add, .AddBasket_content {
+    font-size: $px50;
+    @include alignItemsCenter;
+}

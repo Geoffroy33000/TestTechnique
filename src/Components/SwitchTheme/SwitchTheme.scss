@@ -2,7 +2,6 @@
 @import '../../Assets/Styles/mixins.scss';
 
 .SwitchTheme_container {
-    //@include positionAbsolute;
     position: fixed;
     bottom: $zero;
     right: $zero;

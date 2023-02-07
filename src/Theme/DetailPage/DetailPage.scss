@@ -48,6 +48,10 @@
     margin-top: $px64;
 }
 
+.DetailPage_content_category {
+    margin-right: $px32;
+}
+
 .DetailPage_content_category_title {
     font-size: $px30;
     color:$greyLight;
@@ -78,4 +82,36 @@
 
 .DetailPage_Actions {
     @include displayFlexSpaceBetween;
+}
+
+@media screen and (max-width: 1096px) {
+    .DetailPage_content_categories {
+        flex-wrap: wrap;
+    }
+
+    .DetailPage_content_category:last-child {
+        margin-top: $px64;
+    }
+}
+
+  @media screen and (max-width: 807px) {
+    .DetailPage_content_categories {
+        flex-wrap: wrap;
+        margin-top: $zero;
+        display: block;
+    }
+
+    .DetailPage_content_category {
+        margin-top: $px64;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .DetailPage_content_title {
+        display: block;
+    }
+
+    .DetailPage_content_price {
+        margin-top: $px64;
+    }
 }

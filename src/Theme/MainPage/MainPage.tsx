@@ -1,7 +1,16 @@
 import { useState, useEffect, ChangeEvent, useContext } from "react";
+import classNames from "classnames";
+
 import { AppContext } from "../../Context/context";
 
-import { Button, Carousel, Footer, Modal, SwitchTheme } from "../../Components";
+import {
+  Button,
+  Carousel,
+  Footer,
+  Modal,
+  SwitchTheme,
+  Basket,
+} from "../../Components";
 
 import {
   Data,
@@ -10,7 +19,7 @@ import {
   AlcoholicData,
 } from "../../Assets/Types/DataType";
 
-import { Search as SearchIcon } from "../../Assets/Icons";
+import { Search as SearchIcon, Settings } from "../../Assets/Icons";
 
 import "./MainPage.scss";
 
@@ -32,11 +41,19 @@ function MainPage() {
   const [word, setWord] = useState<string>("");
   const [definitivWord, setDefinitivWord] = useState<string>("");
 
+  const [categorieActive1, setCategorieActive1] = useState<boolean>(false);
+  const [categorieActive2, setCategorieActive2] = useState<boolean>(false);
+  const [categorieActive3, setCategorieActive3] = useState<boolean>(false);
+
   const { state } = useContext(AppContext);
 
   const style = {
     backgroundColor: state.appConfig.theme === "light" ? "#FFFFFF" : "#495057",
   };
+
+  /*const classes = classNames("MainPage_content_category", {
+    "Categorie--is-active": categorieActive,
+  });*/
 
   const products = [
     "Gin",
@@ -231,15 +248,41 @@ function MainPage() {
               <SearchIcon height="35px" width="35px" />
             </div>
           </div>
-          <div className="Search_parameters" onClick={() => setIsOpen(true)}>
-            <img src="Parameters.png" alt="Paramaters" />
+          <div className="Search_parameters">
+            <Button icon={<Settings />} onClick={() => setIsOpen(true)} />
           </div>
         </div>
         <div className="MainPage_content">
           <div className="MainPage_content_categories">
-            <div className="MainPage_content_category">Radler</div>
-            <div className="MainPage_content_category">Sommerpills</div>
-            <div className="MainPage_content_category">Helles</div>
+            <div
+              className="MainPage_content_category"
+              onClick={() => setCategorieActive1(!categorieActive1)}
+            >
+              <div className="MainPage_category_label">Radler</div>
+              {categorieActive1 && (
+                <span className="MainPage_category_active">.</span>
+              )}
+            </div>
+
+            <div
+              className="MainPage_content_category"
+              onClick={() => setCategorieActive2(!categorieActive2)}
+            >
+              <div className="MainPage_category_label">Sommerpills</div>
+              {categorieActive2 && (
+                <span className="MainPage_category_active">.</span>
+              )}
+            </div>
+
+            <div
+              className="MainPage_content_category"
+              onClick={() => setCategorieActive3(!categorieActive3)}
+            >
+              <div className="MainPage_category_label">Helles</div>
+              {categorieActive3 && (
+                <span className="MainPage_category_active">.</span>
+              )}
+            </div>
           </div>
           <div className="MainPage_content_carousel">
             {data && <Carousel drinks={data.drinks} />}
@@ -249,6 +292,7 @@ function MainPage() {
           <Footer />
         </div>
       </div>
+      <Basket />
       <SwitchTheme />
       <Modal isOpen={isOpen} onClose={handleClose}>
         <div className="MainPage_Modal_content">

@@ -1,5 +1,6 @@
 @import '../../Assets/Styles/mixins';
 @import '../../Assets/Styles/variables.scss';
+@import '../../Assets/Styles/colors.scss';
 
 .MainPage_container {
     width: $percent95;
@@ -25,6 +26,7 @@
 
 .MainPage_content_categories {
     height: $px500;
+    width: $px32;
     writing-mode: vertical-lr;
     text-orientation: sideways-right;
     padding: $px50 $zero 70px $px50;
@@ -34,6 +36,14 @@
 
 .MainPage_content_category {
     font-size: $px30;
+}
+
+.MainPage_category_active {
+    @include positionRelative;
+    top: 36px;
+    right: $px64;
+    color: $blueLight;
+    font-size: $px50;
 }
 
 .MainPage_content_carousel {
@@ -74,6 +84,18 @@
 
 .Search_parameters {
     cursor: pointer;
+}
+
+.Search_parameters .Button {
+    height: 100px;
+    width: 100px;
+}
+
+.Search_parameters .Button .Button__icon {
+    height: 100px;
+    width: 100px;
+    @include displayFlex;
+    @include alignItemsCenter;
 }
 
 .MainPage_Modal_options {

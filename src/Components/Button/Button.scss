@@ -22,6 +22,7 @@
 .Button__icon {
     margin-right: $px16;
     @include displayInlineFlex;
+    justify-content: center;
 }
 
 .Button__icon, .Button__icon img {
@@ -29,7 +30,7 @@
 }
 
 /* ICON STATE */
-.Button.Button--has-icon.Button--icon-only {
+.Button.Button--has-icon {
     min-width: $px30;
     justify-content: $center;
   }

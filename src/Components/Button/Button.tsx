@@ -18,7 +18,6 @@ interface Props {
 function Button(props: Props) {
   const classes = classNames("Button", [props.className], {
     "Button--has-icon": props.icon !== undefined,
-    "Button--icon-only": props.children === undefined,
   });
 
   if (props.iconLeft && props.children) {

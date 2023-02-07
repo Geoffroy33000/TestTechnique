@@ -6,3 +6,5 @@ export { default as Artichoke } from './Artichoke';
 export { default as Drop } from './Drop';
 export { default as Percent} from './Percent';
 export { default as Cross } from './Cross';
+export { default as Settings } from './Settings';
+export { default as Basket } from './Basket';

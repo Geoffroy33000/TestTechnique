@@ -5,6 +5,8 @@ import { AppContext } from "../../Context/context";
 
 import { CocktailDetails } from "../../Assets/Types/CocktailDetails";
 
+import { SwitchTheme, Basket, AddBasket } from "../../Components";
+
 import {
   PartialArrowLeft,
   Heart,
@@ -102,10 +104,9 @@ function DetailPage() {
                 {data.drinks[0].strInstructions}
               </p>
             </div>
-            <div className="DetailPage_Actions">
-              <img src="../CardButton.png" alt="CardButton" />
-              <img src="../CardAdd.png" alt="CardAdd" />
-            </div>
+            <AddBasket />
+            <Basket />
+            <SwitchTheme />
           </div>
         </div>
       )}

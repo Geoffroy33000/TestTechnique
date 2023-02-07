@@ -1,0 +1,20 @@
+@import '../../Assets/Styles/mixins.scss';
+@import '../../Assets/Styles/variables.scss';
+
+
+.Basket_container {
+    position: fixed;
+    bottom: 70px;
+    right: 59px;
+}
+.Basket_container .Button {
+    height: 100px;
+    width: 100px;
+}
+
+.Basket_container .Button .Button__icon {
+    height: 100px;
+    width: 100px;
+    @include displayFlex;
+    @include alignItemsCenter;
+}

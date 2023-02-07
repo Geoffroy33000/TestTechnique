@@ -14,7 +14,6 @@ function SwitchTheme() {
     dispatch({ type: TypeAppConfig.SwitchTheme, payload: { theme: theme } });
   }, [theme]);
 
-  console.log(state.appConfig.theme);
   return (
     <div className="SwitchTheme_container">
       <Button className="btn" onClick={() => setTheme("dark")}>
