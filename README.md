@@ -22,4 +22,4 @@ Petit rappel :
 Vous avez pu voir que nous utilisons React Context, une base est déjà présente dans le dossier. Il vous faut utiliser le reducer `appConfigReducer` pour changer le thème de l'application et la passer en thème sombre. Pas besoin d'aller trop loin, un changement de couleur sur le fond du site est suffisant.
 
 
-## Bon courage pour ce test !
+## Bon courage pour ce test !# TestTechnique
